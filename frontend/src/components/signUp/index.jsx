@@ -12,7 +12,7 @@ const SignUp = () => {
 
   const handleSignUp = async () => {
     try {
-      const response = await axios.post('', {
+      const response = await axios.post('https://mern-eval.onrender.com/user/signUp', {
         name,
         email,
         password,

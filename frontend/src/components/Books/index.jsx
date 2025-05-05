@@ -10,7 +10,7 @@ const Product = () => {
     const fetchProduct = async () => {
       try {
         
-        const response = await axios.get('');
+        const response = await axios.get('https://mern-eval.onrender.com/');
         setProducts(response.data.data);
       } catch (err) {
         console.error('Failed to fetch products:', err);

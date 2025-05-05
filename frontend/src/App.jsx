@@ -1,5 +1,5 @@
 import React from 'react';
-import Product from './components/products';
+import Product from './components/Books';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SignIn from './components/signIn';
 import SignUp from './components/signUp';
