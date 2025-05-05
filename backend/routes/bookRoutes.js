@@ -12,4 +12,5 @@ routes.delete("/delete/:id", bookController.deleteBook);
 
 routes.get("/author/:id",bookController.getByAuthor)
 routes.get("/title/:id",bookController.getByTitle)
+routes.get("/:id",bookController.getBookById)
 module.exports = routes;

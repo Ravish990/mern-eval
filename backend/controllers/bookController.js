@@ -7,6 +7,8 @@ const createBooks = async(req, res) => {
 
     const product = new productModel({name, author, price, pages,genre, year});
 
+    
+
     await product.save();
 
       res.status(200).json({success: true, message: "book is saved", data : product})
@@ -76,12 +78,30 @@ const getByTitle = async(req,res) => {
       res.status(200).json({success: true, message : "book fetched", data: book})
 }
 
+getBookById = async(req,res) => {
+    const id = req.params.id;
+    const book = await productModel.findOne({name : req.body._id})
+    if (!id) {
+      res.status(404).json({success: false, message : "book not found"})
+    }
+
+    
+  if(!book) {
+      res.status(400).json({success: false, message: "Book is not present"})
+  }
+    res.status(200).json({success: true, message : "book fetched", data: book})
+    
+}
+
+
+
 module.exports = {
     createBooks,
     deleteBook,
     updateBook,
     getAllBooks,
     getByAuthor,
-    getByTitle
+    getByTitle,
+    getBookById
 }
 
